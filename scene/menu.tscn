@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6ysvemex1h12"]
+
+[ext_resource type="Script" uid="uid://b13fokrc7m5d0" path="res://script/connect_manage.gd" id="1_e5g8k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e5g8k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 754.0
+offset_bottom = 493.0
+alignment = 1
+
+[node name="Server" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Create Server"
+
+[node name="Client" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join Server"
+
+[connection signal="pressed" from="VBoxContainer/Server" to="." method="_on_server_pressed"]
+[connection signal="pressed" from="VBoxContainer/Client" to="." method="_on_client_pressed"]
