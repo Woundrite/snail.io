@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdyact6porgf2"]
+
+[ext_resource type="Script" uid="uid://yuo5ktapgfnf" path="res://script/ui/snail_ui.gd" id="1_4w0ah"]
+[ext_resource type="Texture2D" uid="uid://sp2mwrminm10" path="res://ui/shell_spiral.svg" id="2_lkvmf"]
+[ext_resource type="Texture2D" uid="uid://dibaj6yqtyccq" path="res://ui/shell_body.svg" id="3_4w0ah"]
+[ext_resource type="Texture2D" uid="uid://bqnkuxahd2vmw" path="res://ui/body.svg" id="3_lkvmf"]
+[ext_resource type="Texture2D" uid="uid://b388wta3im83n" path="res://ui/pupils.svg" id="4_dne43"]
+[ext_resource type="Texture2D" uid="uid://1hvcp7aenfu" path="res://ui/eye_ball.svg" id="5_gxdpj"]
+
+[node name="snail_ui" type="Node2D"]
+script = ExtResource("1_4w0ah")
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("3_lkvmf")
+
+[node name="shell_spiral" type="Sprite2D" parent="."]
+position = Vector2(67, 2)
+texture = ExtResource("2_lkvmf")
+
+[node name="shell_body" type="Sprite2D" parent="."]
+position = Vector2(67, 1)
+texture = ExtResource("3_4w0ah")
+
+[node name="pupils" type="Sprite2D" parent="."]
+position = Vector2(-24, 52)
+rotation = 0.22340214
+texture = ExtResource("4_dne43")
+
+[node name="eyeball" type="Sprite2D" parent="."]
+position = Vector2(-24, 52)
+rotation = 0.22340214
+texture = ExtResource("5_gxdpj")

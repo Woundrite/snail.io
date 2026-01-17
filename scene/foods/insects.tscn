@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bam0rortsxb"]
+
+[ext_resource type="Texture2D" uid="uid://76gofv4446xb" path="res://ui/fly.svg" id="1_3v031"]
+[ext_resource type="Texture2D" uid="uid://c0idlkddry2ee" path="res://ui/mosquito.svg" id="2_h2d1j"]
+
+[node name="insects" type="Node2D"]
+
+[node name="fly" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(196, 59)
+texture = ExtResource("1_3v031")
+
+[node name="mosquito" type="Sprite2D" parent="."]
+position = Vector2(255, 75)
+texture = ExtResource("2_h2d1j")

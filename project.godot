@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Snail.io"
+run/main_scene="uid://d320b0qssxwmk"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://script/globals.gd"
+Globals="*res://script/utility/globals.gd"
 NetworkHandler="*res://script/network_handler.gd"
 
 [input]

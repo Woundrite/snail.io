@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b6ysvemex1h12" path="res://scene/menu.tscn" id="1_dfb83"]
 [ext_resource type="Script" uid="uid://rw54htsrl5pt" path="res://script/multiplayer_spawner.gd" id="2_gyia7"]
-[ext_resource type="PackedScene" uid="uid://dug4ua7ratlkk" path="res://scene/player.tscn" id="3_2gjqc"]
+[ext_resource type="PackedScene" uid="uid://dug4ua7ratlkk" path="res://scene/player/player.tscn" id="3_2gjqc"]
 
 [node name="Node2D" type="Node2D"]
 
