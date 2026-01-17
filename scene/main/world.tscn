@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d320b0qssxwmk"]
+[gd_scene load_steps=4 format=3 uid="uid://d320b0qssxwmk"]
 
 [ext_resource type="PackedScene" uid="uid://dug4ua7ratlkk" path="res://scene/player/player.tscn" id="1_vi146"]
 [ext_resource type="Texture2D" uid="uid://danbfprgpiia" path="res://icon.svg" id="2_h5ih4"]
+[ext_resource type="PackedScene" uid="uid://dvttkogxh6loj" path="res://scene/foods/foods.tscn" id="3_wqu2a"]
 
 [node name="world" type="Node2D"]
 
@@ -9,5 +10,8 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.047058824, 1, 1)
+position = Vector2(1005, -353)
 texture = ExtResource("2_h5ih4")
 offset = Vector2(100, 400)
+
+[node name="foods" parent="." instance=ExtResource("3_wqu2a")]

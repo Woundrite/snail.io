@@ -7,9 +7,11 @@ class_name move
 
 @export var SPEED = 500.0
 
+var mouse_position := Vector2(0,0)
+
 func enter():
 	super()
-	Globals.player_position = $"../..".position
+	#Globals.player_position = $"../..".position
 	
 func exit():
 	super()
@@ -20,14 +22,26 @@ func update(delta: float):
 func physics_update(delta: float):
 	super(delta)
 	
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	Globals.player_position = $"../..".position
+	#Globals.player_position = $"../..".position
+	var direction = -($"../..".position-mouse_position)
+	if direction.length() <= 10:
+		transitioned.emit(self, next_state)
 	
-	#print(spd)
-	$"../..".velocity = direction * SPEED
+	if direction.x < 0:
+		if $"../../snail_ui".scale.x < 0 :
+			$"../../snail_ui".scale.x*=-1
+
+	else:
+		if $"../../snail_ui".scale.x > 0 :
+			$"../../snail_ui".scale.x*=-1
+	
+	#print(direction)
+	$"../..".velocity = direction.normalized() * SPEED
 #
 	$"../..".move_and_slide()
 	
-	if direction == Vector2.ZERO:
-		transitioned.emit(self, next_state)
 	
+func _input(event):
+	
+	if event is InputEventMouseMotion:
+		mouse_position = event.position

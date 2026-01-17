@@ -1,54 +1,47 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvttkogxh6loj"]
+[gd_scene load_steps=8 format=3 uid="uid://dvttkogxh6loj"]
 
-[ext_resource type="Texture2D" uid="uid://b2qmauere65gv" path="res://ui/cake.svg" id="1_rdaxe"]
-[ext_resource type="Texture2D" uid="uid://his6rh35oe3a" path="res://ui/apple.svg" id="2_1qcem"]
+[ext_resource type="Script" uid="uid://b6dcs4lqxsoui" path="res://script/utility/food_spawner.gd" id="1_1qcem"]
 [ext_resource type="Texture2D" uid="uid://djo3aoxksun3c" path="res://ui/bread.svg" id="3_fy2yn"]
 [ext_resource type="Texture2D" uid="uid://c3i1l7atq7k5a" path="res://ui/cookie.svg" id="4_bs8hc"]
 [ext_resource type="Texture2D" uid="uid://dgtrcdvuk88un" path="res://ui/hotdog.svg" id="5_kbf3n"]
 [ext_resource type="Texture2D" uid="uid://dcl4wb2dab3gv" path="res://ui/pizza.svg" id="6_m2n12"]
-[ext_resource type="Texture2D" uid="uid://dlxy24q1hnas0" path="res://ui/swiss_roll.svg" id="7_0cqm4"]
 [ext_resource type="Texture2D" uid="uid://bklhp818gkbq6" path="res://ui/doughnut.svg" id="8_xtg3f"]
-[ext_resource type="Texture2D" uid="uid://cx68ousmiyats" path="res://ui/kiwi.svg" id="9_pp3f5"]
 [ext_resource type="Texture2D" uid="uid://c16lptlpjh03e" path="res://ui/potato_chip.svg" id="10_cjdym"]
 
 [node name="foods" type="Node2D"]
-
-[node name="cake" type="Sprite2D" parent="."]
-position = Vector2(45, 144)
-texture = ExtResource("1_rdaxe")
-
-[node name="apple" type="Sprite2D" parent="."]
-position = Vector2(387, 116)
-texture = ExtResource("2_1qcem")
+script = ExtResource("1_1qcem")
 
 [node name="bread" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(879, 126)
 texture = ExtResource("3_fy2yn")
 
 [node name="cookie" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(288, 404)
 texture = ExtResource("4_bs8hc")
 
 [node name="hotdog" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(725, 482)
 texture = ExtResource("5_kbf3n")
 
 [node name="pizza" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1077, -181)
 texture = ExtResource("6_m2n12")
 
-[node name="swiss_roll" type="Sprite2D" parent="."]
-position = Vector2(-179, -125)
-texture = ExtResource("7_0cqm4")
-
 [node name="doughnut" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-372, 154)
 texture = ExtResource("8_xtg3f")
 
-[node name="kiwi" type="Sprite2D" parent="."]
-position = Vector2(267, -192)
-texture = ExtResource("9_pp3f5")
-
 [node name="potato_chip" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-292, 288)
 texture = ExtResource("10_cjdym")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -2,6 +2,8 @@ extends state
 class_name wait
 
 @export var next_state : state
+var mouse_position := Vector2(0,0)
+
 
 func enter():
 	pass
@@ -14,7 +16,12 @@ func update(delta: float):
 	
 func physics_update(delta: float):
 	
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = -($"../..".position-mouse_position)
 	
-	if direction != Vector2.ZERO:
+	if direction.length() > 10:
 		transitioned.emit(self, next_state)
+
+func _input(event):
+	
+	if event is InputEventMouseMotion:
+		mouse_position = event.position

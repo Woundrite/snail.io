@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ppupkcu1rhww"]
+
+[ext_resource type="Script" uid="uid://cv6p2ykhyrmo2" path="res://script/utility/move_food.gd" id="1_nvbqm"]
+[ext_resource type="Texture2D" uid="uid://cx68ousmiyats" path="res://ui/kiwi.svg" id="1_rpuqr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nvbqm"]
+
+[node name="kiwi" type="Node2D"]
+script = ExtResource("1_nvbqm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_nvbqm")
+
+[node name="kiwi" type="Sprite2D" parent="Area2D"]
+position = Vector2(34, 16.000002)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_rpuqr")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
