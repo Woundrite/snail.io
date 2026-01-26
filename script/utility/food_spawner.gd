@@ -4,7 +4,13 @@ extends Node
 preload("res://scene/foods/apple.tscn"),
 preload("res://scene/foods/cake.tscn"),
 preload("res://scene/foods/kiwi.tscn"),
-preload("res://scene/foods/swiss_roll.tscn")
+preload("res://scene/foods/swiss_roll.tscn"),
+preload("res://scene/foods/bread.tscn"),
+preload("res://scene/foods/cookie.tscn"),
+preload("res://scene/foods/doughnut.tscn"),
+preload("res://scene/foods/hotdog.tscn"),
+preload("res://scene/foods/pizza.tscn"),
+preload("res://scene/foods/potato_chip.tscn")
 ]
 
 var rng = RandomNumberGenerator.new()
@@ -19,9 +25,10 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_timer_timeout() -> int:
+func _on_timer_timeout() -> void:
+#func _on_timer_timeout() -> int:
 	
-	return 0
+	#return 0
 	
 	var food = foods.pick_random().instantiate()
 	var scale = rng.randf_range(0.25,1)

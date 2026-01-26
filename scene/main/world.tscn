@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d320b0qssxwmk"]
+[gd_scene load_steps=7 format=3 uid="uid://d320b0qssxwmk"]
 
 [ext_resource type="PackedScene" uid="uid://dug4ua7ratlkk" path="res://scene/player/player.tscn" id="1_vi146"]
 [ext_resource type="Texture2D" uid="uid://danbfprgpiia" path="res://icon.svg" id="2_h5ih4"]
 [ext_resource type="PackedScene" uid="uid://dvttkogxh6loj" path="res://scene/foods/foods.tscn" id="3_wqu2a"]
+[ext_resource type="PackedScene" uid="uid://bk7whuy8efnuw" path="res://scene/utility/energy.tscn" id="4_bd0wy"]
+[ext_resource type="Texture2D" uid="uid://2ai1wd7kqak4" path="res://ui/red_polka_dots.svg" id="4_xbvrl"]
+[ext_resource type="Texture2D" uid="uid://dd5jaasaub1yh" path="res://ui/green_polka_dots.svg" id="5_bd0wy"]
 
 [node name="world" type="Node2D"]
 
@@ -15,3 +18,37 @@ texture = ExtResource("2_h5ih4")
 offset = Vector2(100, 400)
 
 [node name="foods" parent="." instance=ExtResource("3_wqu2a")]
+
+[node name="energy" parent="." instance=ExtResource("4_bd0wy")]
+z_index = 1
+offset_left = 100.0
+offset_top = 50.0
+offset_right = 600.0
+offset_bottom = 77.0
+scale = Vector2(0.5, 0.5)
+
+[node name="unsafe" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -568.0
+offset_top = -638.0
+offset_right = 1761.0
+offset_bottom = 1276.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xbvrl")
+
+[node name="safe" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1153.0
+offset_bottom = 1123.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+texture = ExtResource("5_bd0wy")
+expand_mode = 2

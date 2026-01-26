@@ -15,6 +15,7 @@ properties/0/spawn = true
 properties/0/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 3
 script = ExtResource("1_hjaqi")
 
 [node name="snail_ui" parent="." instance=ExtResource("2_ajqqa")]
