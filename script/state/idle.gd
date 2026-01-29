@@ -6,22 +6,17 @@ var mouse_position := Vector2(0,0)
 
 
 func enter():
-	pass
+	super()
 	
 func exit():
-	pass
+	super()
 
 func update(delta: float):
-	pass
+	super(delta)
+	mouse_position = $"../..".to_local($"../..".get_global_mouse_position())
 	
 func physics_update(delta: float):
+	super(delta)
 	
-	var direction = -($"../..".position-mouse_position)
-	
-	if direction.length() > 10:
+	if mouse_position.length() > 50:
 		transitioned.emit(self, next_state)
-
-func _input(event):
-	
-	if event is InputEventMouseMotion:
-		mouse_position = event.position

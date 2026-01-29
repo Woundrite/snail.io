@@ -18,16 +18,15 @@ func exit():
 
 func update(delta: float):
 	super(delta)
+	mouse_position = $"../..".to_local($"../..".get_global_mouse_position())
 	
 func physics_update(delta: float):
 	super(delta)
 	
-	#Globals.player_position = $"../..".position
-	var direction = -($"../..".position-mouse_position)
-	if direction.length() <= 10:
+	if mouse_position.length() <= 50:
 		transitioned.emit(self, next_state)
 	
-	if direction.x < 0:
+	if mouse_position.x < 0:
 		if $"../../snail_ui".scale.x < 0 :
 			$"../../snail_ui".scale.x*=-1
 
@@ -36,12 +35,6 @@ func physics_update(delta: float):
 			$"../../snail_ui".scale.x*=-1
 	
 	#print(direction)
-	$"../..".velocity = direction.normalized() * SPEED
+	$"../..".velocity = mouse_position.normalized() * SPEED
 #
 	$"../..".move_and_slide()
-	
-	
-func _input(event):
-	
-	if event is InputEventMouseMotion:
-		mouse_position = event.position
