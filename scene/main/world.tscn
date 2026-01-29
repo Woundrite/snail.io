@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://d320b0qssxwmk"]
+[gd_scene load_steps=6 format=3 uid="uid://d320b0qssxwmk"]
 
 [ext_resource type="PackedScene" uid="uid://dug4ua7ratlkk" path="res://scene/player/player.tscn" id="1_vi146"]
-[ext_resource type="Texture2D" uid="uid://danbfprgpiia" path="res://icon.svg" id="2_h5ih4"]
 [ext_resource type="PackedScene" uid="uid://dvttkogxh6loj" path="res://scene/foods/foods.tscn" id="3_wqu2a"]
 [ext_resource type="PackedScene" uid="uid://bk7whuy8efnuw" path="res://scene/utility/energy.tscn" id="4_bd0wy"]
 [ext_resource type="Texture2D" uid="uid://2ai1wd7kqak4" path="res://ui/red_polka_dots.svg" id="4_xbvrl"]
@@ -11,11 +10,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_vi146")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.047058824, 1, 1)
-position = Vector2(1005, -353)
-texture = ExtResource("2_h5ih4")
-offset = Vector2(100, 400)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="foods" parent="." instance=ExtResource("3_wqu2a")]
 
@@ -32,10 +27,10 @@ z_index = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -568.0
-offset_top = -638.0
-offset_right = 1761.0
-offset_bottom = 1276.0
+offset_left = -594.0
+offset_top = -406.0
+offset_right = 1735.0
+offset_bottom = 1508.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_xbvrl")
@@ -52,3 +47,10 @@ grow_vertical = 2
 size_flags_horizontal = 8
 texture = ExtResource("5_bd0wy")
 expand_mode = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(71, 100)
+build_mode = 1
+polygon = PackedVector2Array(-668, -515, -668, 1399, 1656, 1405, 1674, -515)
